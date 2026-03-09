@@ -10,7 +10,7 @@ This test is a step in the jitterbit "Analista de Sistemas Jr" role application 
 
 3. Run `npm -i` to install the dependencies.
 
-4. Run `npm run dev` to start the API (check the console to see if the API running and MongoDB was connected successfully).
+4. Run `npm run dev` to start the API (check the console to see if the API is running and MongoDB was connected successfully).
 
 5. Test with Postman/Insomnia (you can use curl if you want).
 
