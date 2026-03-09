@@ -13,6 +13,7 @@ Este projeto foi desenvolvido como parte de um teste técnico.
 * MongoDB
 * Mongoose
 * Postman (para testes da API)
+* JsonWebToken
 
 ---
 
