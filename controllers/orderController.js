@@ -42,7 +42,7 @@ exports.getOrder = async (req, res) => {
             return res.status(404).json({ message: "Pedido não encontrado" })
         }
 
-        res.json(order)
+        res.status(200).json(order)
 
     } catch (error) {
 
@@ -55,7 +55,7 @@ exports.listOrders = async (req, res) => {
 
     const orders = await Order.find()
 
-    res.json(orders)
+    res.status(200).json(orders)
 
 }
 
@@ -67,7 +67,7 @@ exports.updateOrder = async (req, res) => {
         { new: true }
     )
 
-    res.json(order)
+    res.status(200).json(order)
 
 }
 
@@ -77,6 +77,6 @@ exports.deleteOrder = async (req, res) => {
         orderId: req.params.orderId
     })
 
-    res.json({ message: "Pedido deletado" })
+    res.status(204).json({ message: "Pedido deletado" })
 
 }

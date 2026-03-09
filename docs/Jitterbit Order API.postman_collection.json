@@ -1,0 +1,127 @@
+{
+  "info": {
+    "_postman_id": "f1226b67-4937-4f45-92a1-b66eb6367f71",
+    "name": "Jitterbit Order API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43017606"
+  },
+  "item": [
+    {
+      "name": "Criar pedido",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"numeroPedido\": \"v10089015vdb-01\",\r\n  \"valorTotal\": 10000,\r\n  \"dataCriacao\": \"2023-07-19T12:24:11.529Z\",\r\n  \"items\": [\r\n    {\r\n      \"idItem\": \"2434\",\r\n      \"quantidadeItem\": 1,\r\n      \"valorItem\": 1000\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/order",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "order"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar pedido",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/order/v10089015vdb-01",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "order",
+            "v10089015vdb-01"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar pedidos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/order/list",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "order",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Atualizar pedido",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"value\": 12345,\r\n    \"items\": [\r\n        {\r\n            \"productId\": 2434,\r\n            \"quantity\": 1,\r\n            \"price\": 1000,\r\n            \"_id\": \"69af4cf74918aba20723cb19\"\r\n        },\r\n        {\r\n            \"productId\": 8888,\r\n            \"quantity\": 5,\r\n            \"price\": 10,\r\n            \"_id\": \"69af4cf74918aba20723cb18\"\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/order/v10089015vdb-01",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "order",
+            "v10089015vdb-01"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Deletar pedido",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/order/v10089015vdb-01",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "order",
+            "v10089015vdb-01"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
