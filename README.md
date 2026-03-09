@@ -74,6 +74,27 @@ POST
 
 ---
 
+## Autenticação
+
+A API utiliza autenticação baseada em JWT.
+
+POST
+
+```
+/auth/login
+```
+
+### Body
+```json
+{
+ "username": "admin",
+ "password": "1234"
+}
+```
+
+Após autenticação, o token retornado deve ser enviado no header
+`Authorization: Bearer [TOKEN]`
+
 ## Buscar pedido
 
 GET
