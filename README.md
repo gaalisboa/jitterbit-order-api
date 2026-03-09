@@ -1,27 +1,63 @@
-# jitterbit-order-api test
+# Jitterbit Order API
 
-This test is a step in the jitterbit "Analista de Sistemas Jr" role application job and it works as an orders API using express + mongoose and Postman (easier for testing).
+API simples desenvolvida em **Node.js** para gerenciamento de pedidos, permitindo criar, consultar, atualizar e remover pedidos.
 
-## How to use
+Este projeto foi desenvolvido como parte de um teste técnico.
 
-1. [NodeJS](https://nodejs.org/en/download) and [MongoDB](https://www.mongodb.com/try/download/community) are required to be installed.
+---
 
-2. Clone the repository with `git clone https://github.com/gaalisboa/jitterbit-order-api`.
+# Tecnologias utilizadas
 
-3. Run `npm -i` to install the dependencies.
+* Node.js
+* Express
+* MongoDB
+* Mongoose
+* Postman (para testes da API)
 
-4. Run `npm run dev` to start the API (check the console to see if the API running and MongoDB was connected successfully).
+---
 
-5. Test with Postman/Insomnia (you can use curl if you want).
+# Como executar o projeto
 
-### Post Request Model
+## 1. Clonar o repositório
 
-URL: http://localhost:3000/order
-
-Method: POST
-
-Data: 
+```bash
+git clone https://github.com/SEU-USUARIO/jitterbit-order-api.git
+cd jitterbit-order-api
 ```
+
+## 2. Instalar dependências
+
+```bash
+npm install
+```
+
+## 3. Executar a API
+
+```bash
+npm run dev
+```
+
+A API ficará disponível em:
+
+```
+http://localhost:3000
+```
+
+---
+
+# Endpoints da API
+
+## Criar pedido
+
+POST
+
+```
+/order
+```
+
+### Body
+
+```json
 {
   "numeroPedido": "v10089015vdb-01",
   "valorTotal": 10000,
@@ -35,3 +71,103 @@ Data:
   ]
 }
 ```
+
+---
+
+## Buscar pedido
+
+GET
+
+```
+/order/:orderId
+```
+
+Exemplo:
+
+```
+/order/v10089015vdb-01
+```
+
+---
+
+## Listar pedidos
+
+GET
+
+```
+/order/list
+```
+
+---
+
+## Atualizar pedido
+
+PUT
+
+```
+/order/:orderId
+```
+
+---
+
+## Deletar pedido
+
+DELETE
+
+```
+/order/:orderId
+```
+
+---
+
+# Transformação de dados
+
+A API realiza um **mapping dos campos recebidos** antes de salvar no banco de dados.
+
+Formato recebido:
+
+```json
+{
+  "numeroPedido": "v10089015vdb-01",
+  "valorTotal": 10000,
+  "dataCriacao": "2023-07-19T12:24:11.529Z",
+  "items": [
+    {
+      "idItem": "2434",
+      "quantidadeItem": 1,
+      "valorItem": 1000
+    }
+  ]
+}
+```
+
+Formato armazenado:
+
+```json
+{
+  "orderId": "v10089015vdb-01",
+  "value": 10000,
+  "creationDate": "2023-07-19T12:24:11.529Z",
+  "items": [
+    {
+      "productId": 2434,
+      "quantity": 1,
+      "price": 1000
+    }
+  ]
+}
+```
+
+---
+
+# Testes da API
+
+A API pode ser testada utilizando o **Postman**.
+
+Uma collection de testes está disponível no diretório:
+
+```
+/docs/postman_collection.json
+```
+
+---
